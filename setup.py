@@ -24,13 +24,6 @@ if __name__ == '__main__':
         else:
             shutil.copytree(packages_dir + package, zip_folder + package)
 
-    packages_dir = 'venv/lib64/python3.6/site-packages/'
-    for package in os.listdir(packages_dir):
-        if package.endswith('.so') or package.endswith('.py'):
-            shutil.copyfile(packages_dir + package, zip_folder + package)
-        else:
-            shutil.copytree(packages_dir + package, zip_folder + package)
-
     # Zip contents of zip_folder
     print("Zipping contents")
     shutil.make_archive('takeaways', 'zip', 'zip_folder')
